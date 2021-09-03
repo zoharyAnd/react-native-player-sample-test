@@ -1,4 +1,4 @@
-# react-native-template - compatible with old android devices
+# react-native-player - compatible with old android devices
 
 Compatible with android 5.1.1
 
