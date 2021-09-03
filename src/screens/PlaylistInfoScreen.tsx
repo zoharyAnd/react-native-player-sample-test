@@ -1,4 +1,4 @@
-import React, { useState, useMemo, Fragment, useEffect } from 'react';
+import React, { useState, useMemo } from 'react';
 import { Text, View, ScrollView, StyleSheet, Dimensions, Image, TouchableOpacity, ActivityIndicator } from 'react-native';
 import PlaylistAPI from '../api/PlaylistAPI';
 import { getNumberUnit } from '../utils/number';
