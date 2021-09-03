@@ -11,7 +11,7 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
         <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }}/>
-        <Stack.Screen name="PlaylistInfo" component={PlaylistInfoScreen} />
+        <Stack.Screen name="Playlist" component={PlaylistInfoScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -2,7 +2,7 @@ import React, { useMemo, useState } from 'react';
 import { View, ScrollView, TouchableOpacity, Image, StyleSheet, Dimensions, Text } from 'react-native';
 import PlaylistAPI from '../api/PlaylistAPI';
 
-const HomeScreen = () => {
+const HomeScreen = (props) => {
   const [title, setTitle] = useState<string>('');
   const [playlists, setPlaylists] = useState<any>();
   
@@ -10,7 +10,7 @@ const HomeScreen = () => {
     setTitle(r.message);
     setPlaylists(r.playlists);
   }), []);
-
+  
   return (
     <ScrollView style={styles.container}>
       <View>
@@ -18,7 +18,9 @@ const HomeScreen = () => {
       </View>
       <View style={styles.row}>
         {playlists && playlists.items.map((playlist: any) => (
-          <TouchableOpacity key={playlist.uri} style={styles.card}>
+          <TouchableOpacity key={playlist.uri} style={styles.card} onPress={() => {
+            props.navigation.navigate('Playlist', { playlistId: playlist.id })
+          }}>
             <Image source={{uri: playlist.images[0].url}} style={styles.cover} />
           </TouchableOpacity>
         ))}
@@ -56,4 +58,5 @@ const styles = StyleSheet.create({
     height: 200,
   }
 });
+
 export default HomeScreen;
